@@ -1,0 +1,791 @@
+<!doctype html>
+<html >
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--[if lt IE 9]>
+                <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Domine|Montserrat" rel="stylesheet"> 
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="template.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/template.css" />
+
+    <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- <script type='text/javascript' src='menu/js/jquery.cookie.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.hoverIntent.minified.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.dcjqaccordion.2.7.min.js'></script> -->
+    <!-- <link href="menu/css/skins/blue.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/graphite.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/grey.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+    <!-- <script src="script.js"></script> -->
+    <!-- <script src="jquery.sticky-kit.js "></script> -->
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.cookie.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.dcjqaccordion.2.7.min.js'></script>
+
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/graphite.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/grey.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/ryangrose/easy-pandoc-templates@948e28e5/css/elegant_bootstrap.css" rel="stylesheet" type="text/css" />
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/jquery.sticky-kit.js"></script>
+    <meta name="generator" content="pandoc" />
+  <meta name="author" content="Lecocq Dylan" />
+  <meta name="author" content="Vanhoutte Amaury" />
+  <meta name="author" content="Lelievre Tom" />
+  <meta name="date" content="2024-02-21" />
+  <title>Rendu SAE 2.03</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">body { font-family: Domine, Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif} h1, h2, h3, h4, h5, h6 { font-family: Montserrat, sans }</style>
+</head>
+<body>
+
+    
+    <div class="navbar navbar-static-top navbar-expand-sm px-0 pt-0">
+    <div class="navbar-inner container-fluid">
+      <div class="container">
+        <span class="doc-title">Rendu SAE 2.03</span>
+        <ul class="nav pull-right doc-info">
+                    <li><p class="navbar-text">Lecocq Dylan</p></li>
+                    <li><p class="navbar-text">Vanhoutte Amaury</p></li>
+                    <li><p class="navbar-text">Lelievre Tom</p></li>
+                              <li><p class="navbar-text">February 21,
+2024</p></li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+      <div class="row">
+            <div id="TOC" class="col-sm-7 col-lg-3">
+        <div class="well toc">
+
+        <ul>
+        <li><a href="#configuration-matérielle-dans-virtual-box"
+        id="toc-configuration-matérielle-dans-virtual-box"><span
+        class="toc-section-number">1</span> Configuration matérielle
+        dans Virtual Box</a></li>
+        <li><a href="#installation-os-de-base"
+        id="toc-installation-os-de-base"><span
+        class="toc-section-number">2</span> Installation OS de
+        base</a></li>
+        <li><a href="#sudo" id="toc-sudo"><span
+        class="toc-section-number">3</span> Sudo</a></li>
+        <li><a href="#suppléments-invités"
+        id="toc-suppléments-invités"><span
+        class="toc-section-number">4</span> Suppléments invités</a></li>
+        <li><a href="#quelques-questions"
+        id="toc-quelques-questions"><span
+        class="toc-section-number">5</span> Quelques Questions</a>
+        <ul>
+        <li><a href="#la-maintenance" id="toc-la-maintenance"><span
+        class="toc-section-number">5.1</span> - La maintenance</a></li>
+        <li><a href="#nom-générique-nom-de-code-et-version"
+        id="toc-nom-générique-nom-de-code-et-version"><span
+        class="toc-section-number">5.2</span> - Nom générique, nom de
+        code et version</a></li>
+        </ul></li>
+        <li><a href="#automatisation" id="toc-automatisation"><span
+        class="toc-section-number">6</span> Automatisation</a>
+        <ul>
+        <li><a href="#ajustements-de-la-pré-configuration"
+        id="toc-ajustements-de-la-pré-configuration"><span
+        class="toc-section-number">6.1</span> Ajustements de la
+        pré-configuration</a></li>
+        </ul></li>
+        <li><a href="#git" id="toc-git"><span
+        class="toc-section-number">7</span> Git</a>
+        <ul>
+        <li><a href="#les-interfaces-graphiques-pour-git"
+        id="toc-les-interfaces-graphiques-pour-git"><span
+        class="toc-section-number">7.1</span> Les interfaces graphiques
+        pour Git</a></li>
+        <li><a href="#installons-autre-chose-et-comparons"
+        id="toc-installons-autre-chose-et-comparons"><span
+        class="toc-section-number">7.2</span> Installons autre chose et
+        comparons</a></li>
+        </ul></li>
+        <li><a href="#gitea" id="toc-gitea"><span
+        class="toc-section-number">8</span> Gitea</a>
+        <ul>
+        <li><a href="#à-propos" id="toc-à-propos"><span
+        class="toc-section-number">8.1</span> À propos</a></li>
+        <li><a href="#installation" id="toc-installation"><span
+        class="toc-section-number">8.2</span> Installation</a></li>
+        <li><a href="#contrôle-de-la-signature-gpg"
+        id="toc-contrôle-de-la-signature-gpg"><span
+        class="toc-section-number">8.3</span> Contrôle de la signature
+        GPG</a></li>
+        <li><a href="#configuration-serveur"
+        id="toc-configuration-serveur"><span
+        class="toc-section-number">8.4</span> Configuration
+        serveur</a></li>
+        <li><a href="#mise-à-jour-du-service-binaire-gitea"
+        id="toc-mise-à-jour-du-service-binaire-gitea"><span
+        class="toc-section-number">8.5</span> Mise à jour du service
+        binaire Gitea</a></li>
+        <li><a href="#tests-dutilisation"
+        id="toc-tests-dutilisation"><span
+        class="toc-section-number">8.6</span> Tests
+        d’utilisation</a></li>
+        </ul></li>
+        <li><a href="#annexes" id="toc-annexes"><span
+        class="toc-section-number">9</span> Annexes</a></li>
+        </ul>
+
+        </div>
+      </div>
+            <div class="col-9">
+
+      
+      <h1 data-number="1"
+id="configuration-matérielle-dans-virtual-box"><span
+class="header-section-number">1</span> Configuration matérielle dans
+Virtual Box</h1>
+<ul>
+<li>Que signifie “64-bit” dans “Debian 64-bit” ?</li>
+</ul>
+<blockquote>
+<p>Le 64 bits dans “Debian 64-bit” indique que c’est la version 64 bits
+de Debian.<br />
+Un OS en 64 bits nécessite un processeur en 64 bits également, cela
+permet à l’OS d’être plus performant, de pouvoir gérer plus de données
+et d’avoir un seuil maximal de mémoire RAM beaucoup plus élevé.</p>
+</blockquote>
+<ul>
+<li>Quelle est la configuration réseau utilisée par défaut ?</li>
+</ul>
+<blockquote>
+<p>La configuration réseau utilisée par défaut est
+<strong>NAT</strong><a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>.</p>
+</blockquote>
+<ul>
+<li>Quel est le nom du fichier <em>XML</em> contenant la configuration
+de votre machine ?</li>
+</ul>
+<blockquote>
+<p>Le fichier XML contenant la configuration de la machine se nomme
+<strong>sae203.xml</strong>.</p>
+</blockquote>
+<ul>
+<li>Sauriez-vous le modifier directement ce fichier de configuration
+pour mettre 2 processeurs à votre machine ?</li>
+</ul>
+<blockquote>
+<p>Ce fichier n’est pas modifiable directement, il faut passer par VBox
+afin de modifier la configuration de celui-ci.</p>
+</blockquote>
+<h1 data-number="2" id="installation-os-de-base"><span
+class="header-section-number">2</span> Installation OS de base</h1>
+<ul>
+<li>Qu’est-ce qu’un fichier ISO bootable ?</li>
+</ul>
+<blockquote>
+<p>Un fichier ISO bootable est une image d’un CD qui peut être exécuté.
+Dans notre cas, on l’exécute au démarrage de la machine afin d’installer
+l’OS.</p>
+</blockquote>
+<ul>
+<li>Qu’est-ce que <em>MATE</em> ? <em>GNOME</em> ?</li>
+</ul>
+<blockquote>
+<p>MATE et GNOME sont des environnements de bureau, qui permettent de
+modifier l’interface graphique de l’OS.</p>
+</blockquote>
+<figure>
+<img src="./images/envmate.png" style="width:60.0%;height:60.0%"
+alt="Environnement MATE" />
+<figcaption aria-hidden="true">Environnement MATE</figcaption>
+</figure>
+<ul>
+<li>Qu’est-ce qu’un serveur <em>web</em> ?</li>
+</ul>
+<blockquote>
+<p>Un serveur WEB est une machine connectée à Internet qui stocke
+différents fichiers. Celui-ci les transmet aux machines qui les
+demandent lorsqu’ils se connectent au serveur.</p>
+</blockquote>
+<ul>
+<li>Qu’est-ce qu’un serveur <em>ssh</em> ?</li>
+</ul>
+<blockquote>
+<p>SSH<a href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a> est un protocole réseau qui permet
+aux administrateurs d’accéder à distance à un ordinateur, en toute
+sécurité.</p>
+</blockquote>
+<ul>
+<li>Qu’est-ce qu’un serveur <em>mandataire</em> ?</li>
+</ul>
+<blockquote>
+<p>Un serveur mandataire, ou <em>proxy</em> est un serveur informatique
+qui a pour fonction de relayer des requêtes entre un poste client et un
+serveur.</p>
+</blockquote>
+<h1 data-number="3" id="sudo"><span
+class="header-section-number">3</span> Sudo</h1>
+<ul>
+<li>Comment peux-ton savoir à quels groupes appartient l’utilisateur
+<em>user</em> ?</li>
+</ul>
+<blockquote>
+<p>Pour connaitre les groupes d’un utilisateur courant, on peut utiliser
+la commande <strong><code>groups</code></strong>. La commande
+<strong><code>groups \&lt;user&gt;</code></strong> permet de connaitre
+les groupes d’un utilisateur en particulier.</p>
+</blockquote>
+<ul>
+<li>Comment donner les droits sudo à un utilisateur ?</li>
+</ul>
+<blockquote>
+<p>Pour donner les droits sudo à un utilisateur nommé toto, on utilise
+la commande <strong><code>usermod -aG sudo toto</code></strong> depuis
+l’utilisateur root.</p>
+</blockquote>
+<h1 data-number="4" id="suppléments-invités"><span
+class="header-section-number">4</span> Suppléments invités</h1>
+<ul>
+<li>Quel est la version du noyau <em>Linux</em> utilisé par votre VM ?
+N’oubliez pas, comme pour toutes les questions, de justifier votre
+réponse.</li>
+</ul>
+<blockquote>
+<p>Pour connaitre la version du noyau Linux utilisé, on peut utiliser la
+commande <strong><code>uname -r</code></strong>, qui dans notre cas
+affiche <strong>6.1.0-17-amd64</strong>.</p>
+</blockquote>
+<ul>
+<li>À quoi servent les suppléments invités ? Donner 2 principales
+raisons de les installer.</li>
+</ul>
+<blockquote>
+<p>Les suppléments invités permettent d’ajouter de nouvelles
+fonctionnalités pour la VM, tel que l’ajustement automatique de la
+résolution d’écran, le glisser-déposer ou encore les dossiers
+partagés.</p>
+</blockquote>
+<ul>
+<li>À quoi sert la commande <code>mount</code> (dans notre cas de figure
+et dans le cas général) ?</li>
+</ul>
+<blockquote>
+<p>La commande <code>mount</code> permet de demander au système de
+rendre un système de fichiers accessible, à un emplacement spécifié.</p>
+</blockquote>
+<h1 data-number="5" id="quelques-questions"><span
+class="header-section-number">5</span> Quelques Questions</h1>
+<ul>
+<li>Qu’est-ce que le Projet Debian ? D’où vient le nom <em>Debian</em>
+?</li>
+</ul>
+<blockquote>
+<p>D’après la <a
+href="https://www.debian.org/doc/manuals/debian-faq/basic-defs.en.html#pronunciation">FAQ
+du site de Debian</a>, le projet vise à créer un système d’exploitation,
+compatible Unix, libre et de grande qualité complété d’un ensemble
+d’applications. Le nom Debian est la contraction des noms Debra et Ian
+Murdock qui a fondé le projet.</p>
+</blockquote>
+<figure>
+<img src="./images/Debian_logo.png" style="width:15.0%;height:15.0%"
+alt="Logo Debian" />
+<figcaption aria-hidden="true">Logo Debian</figcaption>
+</figure>
+<h2 data-number="5.1" id="la-maintenance"><span
+class="header-section-number">5.1</span> - La maintenance</h2>
+<ul>
+<li>Il existe 3 durées de prise en charge (support) de ces versions : la
+durée minimale, la durée en support long terme (LTS) et la durée en
+support long terme étendue (ELTS). Quelle sont les durées de ces prises
+en charge ?</li>
+</ul>
+<blockquote>
+<p>D’après le site de <a
+href="https://www.debian.org/releases/index.fr.html">Debian</a> et le <a
+href="https://wiki.debian.org/LTS/Extended">Wiki Debian</a>, La durée
+minimale de support des versions Debian est de 3 ans, 5 ans pour le LTS
+et 10 ans pour le ELTS</p>
+</blockquote>
+<ul>
+<li>Pendant combien de temps les mises à jour de sécurité seront-elles
+fournies ?</li>
+</ul>
+<blockquote>
+<p>D’après la <a
+href="https://www.debian.org/security/faq#lifespan">FAQ</a> du site
+officiel Debian, l’équipe en charge de la sécurité publie des mises à
+jour de sécurité sur la version stable pendant 3 ans après sa
+publication.</p>
+</blockquote>
+<h2 data-number="5.2" id="nom-générique-nom-de-code-et-version"><span
+class="header-section-number">5.2</span> - Nom générique, nom de code et
+version</h2>
+<ul>
+<li>Combien de version au minimum sont activement maintenues par Debian
+? Donnez leur nom générique (= les types de distribution).</li>
+</ul>
+<blockquote>
+<p>Debian annonce sur son <a
+href="https://www.debian.org/releases/index.fr.html">site</a> avoir
+toujours au moins 3 versions activement maintenues, la version
+<em>“stable”</em>, <em>“testing”</em> et <em>“unstable”</em>.</p>
+</blockquote>
+<ul>
+<li>Chaque distribution majeure possède un nom de code différent. Par
+exemple, la version majeure actuelle (Debian 12) se nomme Bookworm. D’où
+viennent les noms de code donnés aux distributions ?</li>
+</ul>
+<blockquote>
+<p>Le <a href="https://wiki.debian.org/fr/DebianReleases">Wiki
+Debian</a> indique que les noms de code donnés aux distributions
+proviennent des personnages provenant des films Toy Story.</p>
+</blockquote>
+<ul>
+<li>L’un des atouts de Debian fut le nombre d’architectures
+officiellement prises en charge. Combien et lesquelles sont prises en
+charge par la version Bullseye ?</li>
+</ul>
+<blockquote>
+<p>D’après le <a
+href="https://wiki.debian.org/DebianBullseye?highlight=%28CategoryRelease%29#Architectures">Wiki
+Debian</a>, 9 architectures sont prises en charge par Debian
+Bullseye.</p>
+</blockquote>
+<ul>
+<li><p>Première version avec un nom de code</p>
+<blockquote>
+<p>Toutes les réponses des deux prochaines parties sont issues du <a
+href="https://wiki.debian.org/DebianReleases">Wiki Debian</a></p>
+</blockquote>
+<ol type="1">
+<li><p>Quel a été le premier nom de code utilisé ?</p>
+<blockquote>
+<p>Le premier nom de code à avoir été utilisé est Buzz</p>
+</blockquote></li>
+<li><p>Quand a-t-il été annoncé ?</p>
+<blockquote>
+<p>Elle a été publiée le 17 juin 1996.</p>
+</blockquote></li>
+<li><p>Quel été le numéro de version de cette distribution ?</p>
+<blockquote>
+<p>Il s’agit de la version 1.1 de Debian.</p>
+</blockquote></li>
+</ol></li>
+<li><p>Dernier nom de code attribué</p>
+<ol type="1">
+<li><p>Quel est le dernier nom de code annoncé à ce jour ?</p>
+<blockquote>
+<p>Le dernier nom de code annoncé est Forky.</p>
+</blockquote></li>
+<li><p>Quand a-t-il été annoncé ?</p>
+<blockquote>
+<p>Ce dernier a été annoncé le 13 octobre 2022.</p>
+</blockquote></li>
+<li><p>Quelle est la version de cette distribution ?</p>
+<blockquote>
+<p>Il s’agit de la version 14 de Debian.</p>
+</blockquote></li>
+</ol>
+<figure>
+<img src="./images/debianversions.png" style="width:40.0%;height:40.0%"
+alt="Les différentes versions de Debian" />
+<figcaption aria-hidden="true">Les différentes versions de
+Debian</figcaption>
+</figure></li>
+</ul>
+<h1 data-number="6" id="automatisation"><span
+class="header-section-number">6</span> Automatisation</h1>
+<h2 data-number="6.1" id="ajustements-de-la-pré-configuration"><span
+class="header-section-number">6.1</span> Ajustements de la
+pré-configuration</h2>
+<ul>
+<li>Ajouter le droit d’utiliser sudo à l’utilisateur standard</li>
+<li>Installer l’environnement MATE.</li>
+<li>Ajouter les paquets suivants :
+<ul>
+<li>sudo : sinon la gestion sudo est inutile</li>
+<li>git, sqlite3, curl : pour préparer l’installation de la semaine
+prochaine</li>
+<li>bash-completion : va vous simplifier grandement l’écriture des
+lignes de commande</li>
+<li>neofetch : pas très utile, mais c’est un classique dans son genre
+(essayez-le)</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Afin de modifier la pré-configuration de la machine, il faut modifier
+le fichier <em>preseed-fr.cfg</em> dans le dossier autoinstall de notre
+machine</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>Pour donner les droits sudo à l’utilisateur, on modifie la ligne
+concernant les groupes par défaut, on obtient ceci :<br />
+<code>d-i passwd/user-default-groups string audio cdrom video</code>**<br />
+<img src="./images/configuser.png"
+alt="Configuration utilisateur" /></p></li>
+<li><p>Pour installer l’environnement MATE, on modifie mes lignes
+concernant les métapaquetages, ce qui donne la ligne suivante<br />
+<strong><code>tasksel tasksel/first multiselect standard ssh-server mate-desktop</code></strong></p></li>
+<li><p>Pour ajouter les paquets demandés, on ajoute, à la suite de la
+ligne précédente, cette commande :<br />
+<strong><code>d-i pkgsel/include sudo git sqlite3 curl bash-completion neofetch</code></strong></p>
+<p>Ce qui nous donne ceci :<br />
+<img src="./images/configpaquets.png"
+alt="Configuration des paquets" /></p></li>
+</ul>
+</blockquote>
+<h1 data-number="7" id="git"><span
+class="header-section-number">7</span> Git</h1>
+<h2 data-number="7.1" id="les-interfaces-graphiques-pour-git"><span
+class="header-section-number">7.1</span> Les interfaces graphiques pour
+Git</h2>
+<ul>
+<li><p>Qu’est-ce que le logiciel <em>gitk</em> ? Comment se lance-t-il
+?</p>
+<blockquote>
+<p>Gitk est un logiciel graphique permettant de visualiser l’historique
+d’un projet Git, les différentes branches, commits ainsi que toutes les
+informations associées. Il peut se lancer via un terminal via la
+commande <code>gitk</code> dans un terminal ou via l’interface de Git
+GUI.</p>
+</blockquote></li>
+<li><p>Qu’est-ce que le logiciel <em>git-gui</em> ? Comment se
+lance-t-il ?</p>
+<blockquote>
+<p>Git GUI est une interface graphique de Git qui permet aux
+utilisateurs de réaliser de nouveaux commits, supprimer des commits
+existants, créer de nouvelles branches, fusionner les branches
+existantes ou push les changements vers un répertoire distant.<br />
+Contrairement à GitK, Git GUI n’affiche pas l’historique du projet et se
+concentre sur les commits.<br />
+On peut le démarrer via la commande <code>git gui</code> dans un
+terminal.</p>
+</blockquote></li>
+</ul>
+<h2 data-number="7.2" id="installons-autre-chose-et-comparons"><span
+class="header-section-number">7.2</span> Installons autre chose et
+comparons</h2>
+<ul>
+<li><p>Pourquoi avez-vous choisi ce logiciel ?</p>
+<blockquote>
+<p>Nous avons choisi d’installer <strong>GitKraken</strong>, car c’est
+un logiciel polyvalent et populaire qui permet la visualisation de
+l’historique ainsi que la gestion des commits tout en proposant une
+interface épurée et ergonomique.<br />
+Tout cela via un client gratuit, ainsi qu’un client payant proposant
+plus de fonctionnalités.</p>
+</blockquote>
+<figure>
+<img src="./images/gitkrakenlogo.png" style="width:40.0%;height:40.0%"
+alt="Logo GitKraken" />
+<figcaption aria-hidden="true">Logo GitKraken</figcaption>
+</figure></li>
+<li><p>Comment l’avez-vous installé ?</p>
+<blockquote>
+<p>Sur Debian, on peut installer Git Kraken via les commandes :<br />
+<strong><code>wget https://release.gitkraken.com/linux/gitkraken-amd64.deb</code><br />
+<code>sudo apt install gitkraken-amd64.deb</code></strong></p>
+</blockquote></li>
+<li><p>Comparez-le aux outils inclus avec git (et installé précédemment)
+ainsi qu’avec ce qui serait fait en ligne de commande pure :
+fonctionnalités avantages, inconvénients…</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 24%" />
+<col style="width: 25%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Caractéristique</th>
+<th style="text-align: center;">Gitk</th>
+<th style="text-align: center;">GitKraken</th>
+<th style="text-align: center;">Git GUI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Interface utilisateur</td>
+<td style="text-align: center;">Interface graphique simple et
+minimale</td>
+<td style="text-align: center;">Interface graphique moderne et
+intuitive</td>
+<td style="text-align: center;">Interface graphique simple et
+fonctionnelle</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Support des fonctionnalités Git</td>
+<td style="text-align: center;">Affiche l’historique des commits et des
+branches</td>
+<td style="text-align: center;">Gestion complète des dépôts Git, avec
+visualisation graphique</td>
+<td style="text-align: center;">Offre des fonctionnalités de base pour
+gérer les dépôts Git</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Intégration des graphes</td>
+<td style="text-align: center;">Graphique des commits et des
+branches</td>
+<td style="text-align: center;">Graphiques visuels pour l’historique des
+commits et les branches</td>
+<td style="text-align: center;">Affiche les commits et les branches sous
+forme de graphiques</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fonctionnalités supplémentaires</td>
+<td style="text-align: center;">Fonctionnalités limitées, principalement
+pour visualiser l’historique</td>
+<td style="text-align: center;">Intégration avec GitHub, Bitbucket et
+GitLab, gestion des conflits, fonctionnalités de collaboration</td>
+<td style="text-align: center;">Intégration avec des outils externes,
+comme des clients de merge</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Personnalisation</td>
+<td style="text-align: center;">Limitée</td>
+<td style="text-align: center;">Personnalisation avancée de
+l’interface</td>
+<td style="text-align: center;">Possibilité de personnaliser l’apparence
+et le comportement</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img src="./images/gitkraken.png" alt="Interface GitKraken" />
+<figcaption aria-hidden="true">Interface GitKraken</figcaption>
+</figure>
+<h1 data-number="8" id="gitea"><span
+class="header-section-number">8</span> Gitea</h1>
+<h2 data-number="8.1" id="à-propos"><span
+class="header-section-number">8.1</span> À propos</h2>
+<ul>
+<li><p>Qu’est-ce que Gitea ?</p>
+<blockquote>
+<p>Gitea est une plateforme de gestion de code source et de
+collaboration. C’est une solution open-source qui permet aux équipes de
+développeurs de travailler ensemble sur des projets de logiciels en
+utilisant Git pour le contrôle de version.<br />
+Gitea offre des fonctionnalités telles que le suivi des problèmes, la
+gestion des demandes de fusion, la gestion des autorisations
+d’accès.</p>
+</blockquote></li>
+<li><p>À quels logiciels bien connus dans ce domaine peut-on le comparer
+?</p>
+<blockquote>
+<p>Gitea peut être comparé à GitHub ou encore GitLab qui proposent des
+fonctionnalités similaires. Cependant, Gitea est reconnu pour être
+facile d’utilisation.</p>
+</blockquote></li>
+</ul>
+<h2 data-number="8.2" id="installation"><span
+class="header-section-number">8.2</span> Installation</h2>
+<p>Nous installerons ici la dernière version de Gitea, la version 1.21.7
+Afin d’installer Gitea depuis les binaires<a href="#fn3"
+class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>,
+comme demandé dans le sujet, nous devons utiliser la commande :</p>
+<pre><code>wget -O gitea https://dl.gitea.com/gitea/1.21.7/gitea-1.21.7-linux-amd64`  </code></pre>
+<p>Puis afin de rendre exécutable Gitea, on utilise :</p>
+<pre><code>chmod +x gitea</code></pre>
+<h2 data-number="8.3" id="contrôle-de-la-signature-gpg"><span
+class="header-section-number">8.3</span> Contrôle de la signature
+GPG</h2>
+<p>Si le fichier binaire est téléchargé manuellement, on peut vérifier
+que le fichier n’a pas été modifié par d’autres personnes que Gitea, car
+ceux-ci signent les fichiers à l’aide d’une clé GPG. Une fois le fichier
+binaire téléchargé, on télécharge le fichier .asc correspondant à la
+version choisie, puis on a saisi les commandes :</p>
+<p><code>gpg --keyserver keys.openpgp.org --recv 7C9E68152594688862D62AF62D9AE806EC1592E2</code></p>
+<p>Puis :<br />
+<code>gpg --verify gitea-1.21.7-linux-amd64 gitea-1.21.7-linux-amd64</code></p>
+<p>Si le message obtenu contient la mention
+<code>Good signature from "Teabot &lt;teabot@gitea.io&gt;"</code> alors
+le fichier n’a subi aucune modification, sinon le message contiendra la
+mention
+<code>This key is not certified with a trusted signature!</code>. Ce qui
+signifie que le fichier a été modifié et qu’il peut donc ne pas être
+fiable.</p>
+<h2 data-number="8.4" id="configuration-serveur"><span
+class="header-section-number">8.4</span> Configuration serveur</h2>
+<p>Afin de pouvoir être exécuté, Gitea nécessite d’avoir Git d’installé
+sur la machine avec une version supérieure ou égale à la 2.0.</p>
+<h3 data-number="8.4.1" id="création-utilisateur"><span
+class="header-section-number">8.4.1</span> Création utilisateur</h3>
+<p>Il faut créer un utilisateur afin de pouvoir utiliser Gitea, afin
+d’en créer un on utilise les commandes :</p>
+<pre><code>adduser \  
+    --system \
+    --shell /bin/bash \
+    --gecos &#39;Git VErsion Control&#39; \
+    --group \
+    --disabled-password \
+    --home /home/git \
+    git </code></pre>
+<h3 data-number="8.4.2"
+id="création-de-la-structure-de-répertoire-requise"><span
+class="header-section-number">8.4.2</span> Création de la structure de
+répertoire requise</h3>
+<p>Gitea requiert une structure de répertoire particulière afin de
+pouvoir fonctionner, celle-ci ne se générant pas automatiquement lors de
+l’installation. Il faut alors la créer manuellement grâce aux commandes
+suivantes :</p>
+<pre><code>mkdir -p /var/lib/gitea/{custom,data,log}  
+chown -R git:git /var/lib/gitea/   
+chmod -R 750 /var/lib/gitea/   
+mkdir /etc/gitea    
+chown root:git /etc/gitea   
+chmod 770 /etc/gitea  </code></pre>
+<p>Le répertoire <code>/etc/gitea</code> est temporairement créé avec
+les droits d’écriture pour l’utilisateur git afin que le web installer
+puisse écrire le fichier de configuration. Il est recommandé d’enlever
+ces droits une fois l’installation finie, cela peut être réalisé grâce
+aux commandes suivantes :</p>
+<pre><code>chmod 750 /etc/gitea
+chmod 640 /etc/gitea/app.ini</code></pre>
+<h3 data-number="8.4.3"
+id="configurer-le-répertoire-de-travail-de-gitea"><span
+class="header-section-number">8.4.3</span> Configurer le répertoire de
+travail de Gitea</h3>
+<p>Il est nécessaire de définir le répertoire de travail à utiliser par
+Gitea, afin que celui-ci soit utilisé systématiquement.<br />
+On utilise la commande suivante afin de le définir.</p>
+<pre><code>export GITEA_WORK_DIR=/var/lib/gitea/</code></pre>
+<h3 data-number="8.4.4" id="ajout-de-lautocomplétion-bashzsh"><span
+class="header-section-number">8.4.4</span> Ajout de l’autocomplétion
+bash/zsh</h3>
+<p>Afin d’activer l’autocomplétion de bash ou de zsh, il est nécessaire
+de télécharger le script correspondant et de le copier dans le
+répertoire <code>/usr/share/bash-completion/completions/gitea</code>
+pour bash ou <code>/usr/share/zsh/_gitea</code> pour zsh.</p>
+<h2 data-number="8.5" id="mise-à-jour-du-service-binaire-gitea"><span
+class="header-section-number">8.5</span> Mise à jour du service binaire
+Gitea</h2>
+<ul>
+<li><p>Quelle version du binaire avez-vous installé ? Donnez la version
+et la commande permettant d’obtenir cette information ?</p>
+<blockquote>
+<p>Lors de notre installation, nous avons choisi la version 1.21.7 de
+Gitea.<br />
+Afin de connaître la version installée, on peut utiliser la commande
+<code>gitea -v</code></p>
+</blockquote></li>
+<li><p>Comment faire pour mettre à jour le binaire de votre service sans
+devoir tout reconfigurer ? Essayez en mettant à jour vers la version
+<em>1.22-dev</em>.</p>
+<blockquote>
+<p>Pour mettre à jour le binaire de notre service, il suffit de
+remplacer le fichier binaire dans <code>/usr/local/bin/gitea</code> par
+le fichier binaire de la nouvelle version.<br />
+Il suffit ensuite de redémarrer Gitea. Afin de passer à la version
+1.22-dev, on remplace donc le fichier actuel par le fichier</p>
+</blockquote></li>
+</ul>
+<h2 data-number="8.6" id="tests-dutilisation"><span
+class="header-section-number">8.6</span> Tests d’utilisation</h2>
+<h3 data-number="8.6.1" id="création-dun-dépôt"><span
+class="header-section-number">8.6.1</span> Création d’un dépôt</h3>
+<p>Gitea étant basé sur Git, il est possible de créer un dépôt afin d’y
+stocker les fichiers issus d’un même projet. Pour ce faire, il suffit de
+cliquer sur le logo correspondant dans le coin supérieur gauche de
+l’interface Gitea comme sur la figure ci-dessous.<br />
+<img src="images/NouveauDepot.png"
+alt="Création d’un dépôt Gitea" /></p>
+<h3 data-number="8.6.2" id="configuration-dun-nouveau-dépôt"><span
+class="header-section-number">8.6.2</span> Configuration d’un nouveau
+dépôt</h3>
+<p>Suite à la création d’un nouveau dépôt, il sera nécessaire de
+configurer ce dernier, choisir son nom, sa visibilité…</p>
+<figure>
+<img src="images/ConfigDepot.png"
+alt="Configuration d’un dépôt Gitea" />
+<figcaption aria-hidden="true">Configuration d’un dépôt
+Gitea</figcaption>
+</figure>
+<h3 data-number="8.6.3" id="ajouter-des-fichiers-à-un-dépôt"><span
+class="header-section-number">8.6.3</span> Ajouter des fichiers à un
+dépôt</h3>
+<p>Vous pouvez ajouter des fichiers à un dépôt en cliquant sur le bouton
+“<strong>Ajouter des fichiers</strong>” puis en sélectionnant ou en
+glissant les fichiers que vous souhaitez ajouter.<br />
+<img src="images/AjouterFichier.png"
+alt="Ajout d’un fichier au dépôt" /></p>
+<h1 data-number="9" id="annexes"><span
+class="header-section-number">9</span> Annexes</h1>
+<p>Afin de réaliser ce rapport, plusieurs ressources web ont été
+utilisées en voici la liste :</p>
+<ul>
+<li><a
+href="https://www.debian.org/doc/manuals/debian-faq/basic-defs.en.html#pronunciation">FAQ
+du site de Debian</a><br />
+</li>
+<li>La page du site officiel de Debian répertoriant <a
+href="https://www.debian.org/releases/index.fr.html">les versions de
+Debian</a><br />
+</li>
+<li>La page du Wiki Debian sur <a
+href="https://wiki.debian.org/LTS/Extended">le support Debian</a><br />
+</li>
+<li>La <a href="https://www.debian.org/security/faq#lifespan">FAQ
+Sécurité</a> du site officiel de Debian<br />
+</li>
+<li>La page du Wiki Debian répertoriant <a
+href="https://wiki.debian.org/fr/DebianReleases">les distributions
+Debian</a><br />
+</li>
+<li>La page du Wiki Debian concernant <a
+href="https://wiki.debian.org/DebianBullseye?highlight=%28CategoryRelease%29#Architectures">Debian
+Bullseye</a><br />
+</li>
+<li>La documentation officielle de Git sur <a
+href="https://git-scm.com/docs/gitk/">GitK</a><br />
+</li>
+<li>La documentation officielle de Git sur <a
+href="https://git-scm.com/docs/git-gui/fr">GIT GUI</a><br />
+</li>
+<li>Le site officiel de <a
+href="https://www.gitkraken.com">GitKraken</a><br />
+</li>
+<li>La documentation officielle de <a
+href="https://docs.gitea.com/installation/install-from-binary">Gitea</a></li>
+</ul>
+<p>Ce rapport a été réalisé au premier trimestre 2024, dans le cadre
+d’un projet universitaire à l’IUT de Lille à l’aide de Markdown et
+l’outil Pandoc.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>NAT signifie <em>Network Adress Translation</em> ou
+translation d’adresse réseau en Français.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>SSH signifie Secure Socket Shell ou carapace sécurisée
+en Français.<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Il est en effet possible d’installer Gitea de plusieurs
+manières différentes, depuis les fichiers binaires, comme ici, avec
+l’aide d’un gestionnaire de paquet, ou bien depuis le code source.<a
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+            </div>
+    </div>
+  </div>
+  <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+
+</body>
+</html>

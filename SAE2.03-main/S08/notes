@@ -1,0 +1,22 @@
+Exercice 1
+
+Q1.1) Gitk est un logiciel graphique permettant de visualiser l'historique d'un projet Git, les différentes branches, commits ainsi que toutes les informations associées.
+    Il peut se lancer via un terminal via la commande gitk dans un terminal ou via l'interface de Git GUI.
+
+Q1.2) Git GUI est une interface graphique de Git qui permet aux utilisateurs de réaliser de nouveaux commits, supprimer des commits existants, créer de nouvelles branches, fusionner les branches existantes ou push les changements vers un repertoire distant.
+      Contrairement à GitK, Git GUI n'affiche pas l'historique du projet et se concentre sur les commits.
+      On peut le démarrer via la commande git gui.
+
+Q2.1) Nous avons choisi d'installer GitKraken, car c'est un logiciel polyvalent et populaire, qui permet la visualisation de l'historique ainsi que la gestion des commits tout en proposant une interface épurée et ergonomique.
+      Tout cela en proposant un client gratuit, ainsi qu'un client payant proposant plus de fonctionnalités.
+
+Q2.2) Sur Debian, on peut installer Git Kraken via les commandes : 
+	wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+	sudo apt install gitkraken-amd64.deb
+
+Q2.3) GitKraken offre les avantages de GitK et Git GUI tout en les ameliorant, l'interface graphique facilite le suivi de l'évolution du projet, tandis que la gestion des commits aide au développement et à l'accessibilité de Git comparé à ce qui peut être fait en ligne de commande.
+      Pas besoin de connaitr toutes les commandes de git, le logiciel réalise ces commandes lorsque l'utilisateur clique sur le bouton associé.
+      Il détecte également les modifications réalisées depuis le dernier commit et permet à l'utilisateur de savoir exactement quels fichiers ont été modifié et à quel endroit.
+      Tout en proposant au développeur de réaliser un commit lorsque ses modifications sont terminées, puis de push vers son répertoire distant s'il le souhaite.
+      Il facilite le développement en équipe en intégrant des fonctions dédiées tout en permettant de traquer les erreurs possible sur un répertoire, évitant ainsi les différences de versions par exemple...
+      Son ergonomie et sa facilité d'utilisation permet à n'importe qui de pouvoir l'utiliser, cependant, cela implique que les utilisateurs n'ont pas de réél besoin de savoir utiliser git sans celui-ci, ce qui peut poser problème.

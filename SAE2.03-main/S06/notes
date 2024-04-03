@@ -1,0 +1,24 @@
+Q1) 1- Le 64 bits dans "Debian 64-bit" indique que c'est la version 64 bits de Debian
+       Un OS ayant 64bits peut stocker plus de données et permet d'avoir une limite quasiment infinie de RAM contre 4Gb sur un OS en 32bits
+    2- La configuration réseau utilisée par défaut est NAT (Network Adress Translation)
+    3- Le fichier XML contenant la configuration de la machine se nomme sae203.xml
+    4- Se fichier n'est pas modifiable directement, il faut passer par VBox afin de modifier la configuration de celui-ci.
+Q2) 1- Un fichier ISO bootable est une image d'un CD qui peut être éxecuté au démarrage de la machine, dans notre cas, elle contient l'install de l'OS.
+    2- MATE et GNOME sont des environnements de bureau, qui permettent de modifier l'interface graphique de l'OS.
+    3- Un serveur WEB est une machine connecté à internet qui stocke différents fichiers et les transmets aux machines qui les demandent lorsqu'ils se connectent à cette même machine.
+    4- SSH, ou Secure Socket Shell, est un protocole réseau qui permet aux administrateurs d'accéder à distance à un ordinateur, en toute sécurité.
+    5- Un serveur mandatoire ou proxy est un serveur informatique qui a pour fonction de relayer des requêtes entre un poste client et un serveur.
+Q3) 1- Pour savoir les groupes d'un utilisateur, on peut utiliser la commande groups si on veut connaitre les groupes de l'utilisateur courant, ou groups <nom> pour connaitre les groupes de l'utilisateur nom.
+    2- Pour donner les droits sudo à l'utilisateur user on utilise la commande usermod -aG sudo user en étant connecté en tant que root.
+    3- Pour connaitre la version du noyau linux utilisé, on utilise la commande uname -r, celle-ci nous affiche 6.1.0-17-amd64
+    4- Les suppléments invités permettent d'ajouter de nouvelles fonctions sur la VM, tel que l'ajustement automatique de la résolution d'écran, le glisser-déposer ou encore les dossiers partagés.
+    5- La commande mount permet de demander au système d'exploitation de rendre un système de fichiers accessible, à un emplacement spécifié.
+Q4.2) 1- Le projet Debian vise à créer un système d'exploitation, compatible Unix, libre et de grande qualité, complété d'un ensemble d'applications. "https://www.debian.org/doc/manuals/debian-faq/basic-defs.fr.html#whatisdebian" 
+         Le nom Debian est la contraction des noms Debra et Ian Murdock, qui a fondé le projet.
+      2- La durée minimale de support des versions Debian est de 3 ans, 5 ans pour le LTS et 10 ans pour le ELTS. "https://www.debian.org/releases/index.fr.html et https://wiki.debian.org/LTS/Extended"
+      3- L'équipe en charge de la sécurité prend en charge la distribution stable pendant 3 années après sa publication. "https://www.debian.org/security/faq#lifespan"
+      4- Debian à toujours au moins 3 versions activement maintenues, "stable", "testing" et "unstable" https://www.debian.org/releases/index.fr.html
+      5- Les noms de code données aux distributions proviennent des personnages des films "Toy Story"  
+Q5) Afin de modifier la pré-configuration de la machine, on modifie le fichier preseed-fr.cfg dans le dossier autoinstall
+    Pour installer l'environnement MATE, on modifie la lignes concernant les méta paquetages : tasksel tasksel/first multiselect standard ssh-server mate-desktop
+    Pour ajouter les paquets demandés, on ajoute la ligne suivante à la suite de la précédente : d-i pkgsel/include sudo git sqlite3 curl bash-completion neofetch  
